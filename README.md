@@ -1,8 +1,3 @@
-Title: Wikidata與OSM的串聯及補齊
-Date: 2020-12-22
-Author: Ting Chia
-Slug: osm-wiki
-
 #Wikidata與OSM的串聯及補齊
 **Ting Chia**
 
