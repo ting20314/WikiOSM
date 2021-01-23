@@ -1,9 +1,9 @@
-#Wikidata與OSM的串聯及補齊
+# Wikidata與OSM的串聯及補齊
 **Ting Chia**
 
 **2020-12-22**
 
-###對於Wikidata與OpenStreetMap的了解與前置作業
+### 對於Wikidata與OpenStreetMap的了解與前置作業
 
 在進行串聯前，我們需要先對於Wikidata與OpenStreetMap有幾個認識:
 
@@ -12,7 +12,7 @@
 3. Wikidata中資料庫建立較為嚴格，而在OpenStreetMap中建立一新資料較容易，因此在OpenStreetMap中有許多資料為使用者個人使用，非提供與大眾使用。
 4. 以資料的批次上傳而言，Wikidata有可以直接使用的Quickstatements來上傳資料，並且只要將想增加的欄位複製貼上即可，非榮直觀、容易；然而在OpenStreetMap中，需要以原始的完整資料進行修改，並且轉換為更正檔，才能進行批次上傳，類似於git中，需要上傳資料前，需要先將資料pull out，將所要增加或刪減的資料修正後，才能夠push回去，是類似的原理，因此愛批次上傳下資料修正後，才能夠push回去，是類似的原理，因此在OpenStreetMap的批次上傳是較為複雜、多程序的。
 
-###步驟
+### 步驟
 
 1. 同時在Wikidata與OpenStreetMap中進行資料的採集
   - Wikidata:使用[Wikidata Query](https://query.wikidata.org/)進行資料的收集
@@ -65,7 +65,7 @@
 	
 	./upload.py -u username -p password -c yes -m 'add wikidata' file.osc  
 
-###Wikidata與OSM的自動化串聯
+### Wikidata與OSM的自動化串聯
 
 此次研究中，因為步驟十分繁瑣，因此我自行寫了數個程式，配合原有的upload.py，將整個串連動作進行自動化的串聯，讓非Wikidata專業與OpenStreetMap的使用者皆可以進行資料串連，並且可以針對不同地區、不同對象進行串聯。
 以下程式皆可於此下載:[自動化串聯](https://github.com/ting20314/WikiOSM)
@@ -106,7 +106,7 @@
 	
 	./linkallpy.py 22 120 25 122 Q3914 Q865 C:\\Users\\USER\\Downloads  
 
-###遇到的困難及可以改進的地方
+### 遇到的困難及可以改進的地方
 
 從串聯的過程中，雖然容易對Wikidata進行串聯，然而在Wikiata資料庫的呈現上仍只有一組識別碼，並非展現出OpenStreetMap的圖層，然而這個部分可能就要與Wikidata的社群討論，是否以OpenStreetMap圖台呈現圖層，更能夠展現出地理特性，畢竟並非所有人都會點入識別碼，連到OpenStreetMap中看地理範圍的。
 而在OpenStreetMap中，Relation的數量極少，因此能夠串連的地物不多，且建立Relation的標準不明確，如以中正紀念堂為例，中正紀念堂的Relation範圍在建築物周圍，還是Relation範圍在整個圍牆周圍，這也是需要討論的問題。此外，OpenStreetMap本身在Query時，在bbox的範圍選擇上也容易系統出錯，導致可能查找的範圍並非所求範圍。
