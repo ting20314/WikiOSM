@@ -3,7 +3,15 @@
 
 **2020-12-22**
 
-### Preparatory for Wikidata and OpenStreetMap Integration
+Wikidata and OpenStreetMap are widely used open databases that leverage the power of crowdsourcing to expand their datasets. However, there are limitations within each platform. In Wikidata, while it contains information about many prominent landmarks and geographic locations, these places are often represented by a single point. From a geographic information system perspective, this representation is insufficient.
+
+On the other hand, OpenStreetMap provides more comprehensive layers of geographical data, including points, lines, and polygons. However, the attribute data within these layers is still relatively sparse compared to Wikidata. Two main reasons contribute to the incompleteness of data in both Wikidata and OpenStreetMap.
+
+Firstly, different individuals or communities contribute to the development of these databases, resulting in varying levels of progress. For instance, OpenStreetMap may prioritize geographic features (points, lines, areas, and relations), while Wikidata focuses on data sources and interconnections between data.
+
+Secondly, Wikidata's representation of geographic information is limited to node coordinates, and nodes cannot be overlaid to depict relationships. In contrast, OpenStreetMap's Attribute Table is relatively basic, with connectivity based primarily on geographic coordinates. As a solution to these limitations, integrating these two databases and subsequent data enhancement can significantly contribute to open data resources.
+
+#### Preparatory for Wikidata and OpenStreetMap Integration
 
 Before proceeding with the integration, it's essential to have a few critical understandings about Wikidata and OpenStreetMap:
 
@@ -14,7 +22,7 @@ Batch Data Upload: Regarding batch data upload, Wikidata provides an accessible 
 
 
 
-### Steps of the integration
+#### Steps of the integration
 
 1. =Collecting Data in both Wikidata and OpenStreetMap
 
@@ -70,7 +78,7 @@ As an example, a CSV comparison is used (matching label names with alias/label t
 	
 	./upload.py -u username -p password -c yes -m 'add wikidata' file.osc  
 
-### Wikidata與OSM的自動化串聯
+#### Wikidata與OSM的自動化串聯
 
 此次研究中，因為步驟十分繁瑣，因此我自行寫了數個程式，配合原有的upload.py，將整個串連動作進行自動化的串聯，讓非Wikidata專業與OpenStreetMap的使用者皆可以進行資料串連，並且可以針對不同地區、不同對象進行串聯。
 以下程式皆可於此下載:[自動化串聯](https://github.com/ting20314/WikiOSM)
