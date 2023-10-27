@@ -1,4 +1,4 @@
-### Automated Integration and Updating of Wikidata with OpenStreetMap 
+### Automatic Data Completion Connection between OpenStreetMap and Wikidata 
 **Ching-Ting Chia**
 
 **2020-12-22**
